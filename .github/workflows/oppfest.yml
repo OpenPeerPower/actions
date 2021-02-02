@@ -1,18 +1,18 @@
-name: Test hassfest
+name: Test oppfest
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 jobs:
   hassfest:
     runs-on: ubuntu-latest
-    name: hassfest
+    name: oppfest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
       
-      - name: Test hassfest
-        uses: ./hassfest
+      - name: Test oppfest
+        uses: ./oppfest
