@@ -1,0 +1,14 @@
+{
+	"problemMatcher": [
+        {
+            "owner": "oppfest",
+            "pattern": [
+                {
+                    "regexp": "^\\*\\s\\[(ERROR|WARNING)\\]\\s(.*)$",
+                    "severity": 1,
+                    "message": 2
+                }
+            ]
+        }
+    ]
+}

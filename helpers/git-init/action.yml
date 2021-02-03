@@ -1,0 +1,23 @@
+name: 'Open Peer Power helper: git-init'
+description: 'GitHub action helper: git-init'
+inputs:
+  name:
+    required: true
+    default: 'Open Peer Power'
+  email:
+    required: true
+    default: 'hello@open-peer-power.io'
+  token:
+    required: true
+runs:
+  using: "composite"
+  steps: 
+    - shell: bash
+      run: |
+        git config --global user.name "${{ inputs.name }}"
+        git config --global user.email "${{ inputs.email }}"
+
+        if [[ ! -z "${{ inputs.token }}" ]]; then
+          git config --global credential.helper store
+          echo "https://${{ inputs.token }}:x-oauth-basic@github.com" > $HOME/.git-credentials
+        fi
