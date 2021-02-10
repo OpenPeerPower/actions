@@ -44,8 +44,8 @@ runs:
         jq '.${{ inputs.key }} |= "${{ inputs.version }}"' "${{ GITHUB_WORKSPACE }}/${{ inputs.channel }}.json" > "${temp}"
         mv "${temp}" "/tmp/version/${{ inputs.channel }}.json"
 
-    - shell: bash
+    - name: Checkin the repository    
+      uses: actions/checkout@v2
       run: |
-        cd /tmp/version
         git commit -am "Bump ${{ steps.validate-input.outputs.key-description }} to ${{ inputs.version }}"
         git push
