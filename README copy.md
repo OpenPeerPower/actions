@@ -6,7 +6,7 @@ GitHub Actions and helper for Open Peer Power workflows
 
 _Run oppfest to validate standalone integration repositories._
 
-**action**: `open-peer-power/actions/oppfest@master`
+**action**: `openpeerpower/actions/oppfest@master`
 
 example implementation:
 
@@ -24,7 +24,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
         - uses: "actions/checkout@v2"
-        - uses: "open-peer-power/actions/oppfest@master"
+        - uses: "openpeerpower/actions/oppfest@master"
 ```
 
 This will run the `oppfest` action on every push and pull request to all branches, as well as every midnight.

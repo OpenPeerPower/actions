@@ -1,7 +1,7 @@
 {
     "domain": "dummy-integration",
     "name": "dummy",
-    "documentation": "https://github.com/open-peer-power/actions",
+    "documentation": "https://github.com/openpeerpower/actions",
     "version": "1.0.0",
     "codeowners": ["@octocat"]
 }

@@ -1,4 +1,4 @@
-FROM openpeerpower/open-peer-power:beta
+FROM openpeerpower/openpeerpower:beta
 
 COPY entrypoint.sh /entrypoint.sh
 COPY requirements.txt .
@@ -9,7 +9,7 @@ WORKDIR "/github/workspace"
 ENTRYPOINT ["/entrypoint.sh"]
 
 LABEL "name"="oppfest"
-LABEL "maintainer"="Open Peer Power <hello@open-peer-power.io>"
+LABEL "maintainer"="Open Peer Power <hello@openpeerpower.io>"
 LABEL "version"="1.1"
 
 LABEL "com.github.actions.name"="oppfest"

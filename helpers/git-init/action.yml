@@ -6,7 +6,7 @@ inputs:
     default: 'Open Peer Power'
   email:
     required: true
-    default: 'hello@open-peer-power.io'
+    default: 'hello@openpeerpower.io'
   token:
     required: true
 runs:
