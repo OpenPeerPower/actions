@@ -31,9 +31,8 @@ runs:
         else
           echo "::set-output name=key-description::${{ inputs.key-description }}"
         fi
-
-    - name: Checkout the repository    
-      uses: actions/checkout@v2
+ 
+    - run: actions/checkout@v2
       with:
         repository: openpeerpower/version
         path: tmp/version
@@ -43,9 +42,8 @@ runs:
         temp=$(mktemp)
         jq '.${{ inputs.key }} |= "${{ inputs.version }}"' "${{ GITHUB_WORKSPACE }}/${{ inputs.channel }}.json" > "${temp}"
         mv "${temp}" "/tmp/version/${{ inputs.channel }}.json"
-
-    - name: Checkin the repository    
-      uses: actions/checkout@v2
+   
+    - run: actions/checkout@v2
       run: |
         git commit -am "Bump ${{ steps.validate-input.outputs.key-description }} to ${{ inputs.version }}"
         git push
