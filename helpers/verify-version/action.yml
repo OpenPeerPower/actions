@@ -5,8 +5,8 @@ inputs:
     description: Skip check if the branch is 'dev'
     required: false
     default: false
-  ignore-master:
-    description: Skip check if the branch is 'master'
+  ignore-main:
+    description: Skip check if the branch is 'main'
     required: false
     default: false
 runs:
@@ -21,7 +21,7 @@ runs:
 
         if [[ "${{ inputs.ignore-dev }}" =~ true|True ]] && [ "${branch_version}" == "dev" ]; then
           exit 0
-        elif [[ "${{ inputs.ignore-master }}" =~ true|True ]] && [ "${branch_version}" == "master" ]; then
+        elif [[ "${{ inputs.ignore-main }}" =~ true|True ]] && [ "${branch_version}" == "main" ]; then
           exit 0
         elif [ "${setup_version}" != "${branch_version}" ]; then
           echo "Version of tag ${branch_version} don't match with ${setup_version}!"

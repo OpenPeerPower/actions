@@ -35,7 +35,7 @@ runs:
 
         if [[ ! -z "${{ github.event.inputs.version }}" ]]; then
           version="${{ github.event.inputs.version }}"
-        elif [[ "${version}" == "master" ]] || [[ "${version}" == "main" ]];then
+        elif [[ "${version}" == "main" ]] || [[ "${version}" == "main" ]];then
           today="$(date --utc '+%Y-%m-%d')"
           midnight_timestamp="$(date --utc +%s --date=$today)"
           calver_date="$(date --utc --date=$today '+%Y.%m.dev%d')"
